@@ -37,19 +37,19 @@ body{
 	background-image:
 		linear-gradient(to right bottom,
 			rgba(126,213,111,.6),
-			rgba(40,180,131,.6)),
+			rgba(40,0,131,.6)),
 		    url(../img/hero.jpg);
 	
 	background-size:cover;
+	
 	background-position:top;
-	/*
+	
 	background-attachment: fixed;
-	*/
 	
 	-ms-clip-path:polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
-	
 	clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
 	position:relative;
+	
 }
 
 .logo-box{
@@ -105,6 +105,7 @@ body{
 	display: inline-block;
 	border-radius: 100px;
 	transition:all 0.2s;
+	position: relative;
 }
 
 .btn:hover{
@@ -123,10 +124,27 @@ body{
 	
 }
 
+.btn::after{
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s ease-in-out;
+}
 
+.btn-white::after{
+	background-color: #fff;
+}
 
-
-
+.btn:hover::after{
+	transform: scale(1.5);
+	opacity: 0;
+}
 
 
 
